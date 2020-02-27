@@ -1,58 +1,61 @@
-﻿using System;
-using System.Collections.Generic;
-using BlabberApp.Domain.Entities;
+﻿using BlabberApp.Domain.Entities;
 using BlabberApp.Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BlabberApp.DataStore
 {
-    public class InMemory : IRepository<BaseEntity>
+    public class InMemory<T> : IRepository<T> where T : BaseEntity
     {
-        private List<BaseEntity> _items = new List<BaseEntity>();
+        private ApplicationContext Context;
+        private DbSet<T> _entities; 
 
-        public void Add(BaseEntity entity)
+        public InMemory(ApplicationContext context)
+        {
+            Context = context;
+            _entities = context.Set<T>();
+        }
+
+        public void Add(T entity)
         {
             if (entity == null)
             {
                 throw new ArgumentNullException("entity");
             }
-            this._items.Add(entity);
+            _entities.Add(entity);
+            Context.SaveChanges();
         }
-        public void Remove(BaseEntity entity)
+        public void Remove(T entity)
         {
             if (entity == null)
             {
                 throw new ArgumentNullException("entity");
             }
-            this._items.Remove(entity);
+            _entities.Remove(entity);
+            Context.SaveChanges();
         }
-        public void Update(BaseEntity entity)
+        public void Update(T entity)
         {
             if (entity == null)
             {
                 throw new ArgumentNullException("entity");
             }
+            Context.SaveChanges();
         }
-        public List<BaseEntity> GetAll()
+        public IEnumerable<T> GetAll()
         {
-            return this._items;
+            return _entities.AsEnumerable();
         }
-        public BaseEntity GetById(string sysId) 
+        public T GetBySysId(string sysId)
         {
             if (sysId.Equals(""))
             {
                 throw new ArgumentNullException("sysId");
             }
-            var entity = new BaseEntity();
 
-            foreach (BaseEntity item in this._items)
-            {
-                if (!item.Equals(sysId))
-                {
-                    return entity;
-                }
-                entity = item;
-            }
-            return entity;
+            return _entities.SingleOrDefault(s => s.getSysId() == sysId);
         }
     }
 }

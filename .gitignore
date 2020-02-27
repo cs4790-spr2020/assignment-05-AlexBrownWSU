@@ -10,3 +10,4 @@ BlabberApp.WebApi/obj
 BlabberApp.WebApiTest/obj
 BlabberApp.ClientTest/obj
 BlabberApp.ClientTest/obj/Debug/netcoreapp3.1/BlabberApp.ClientTest.assets.cache
+BlabberApp.DomainTest/bin

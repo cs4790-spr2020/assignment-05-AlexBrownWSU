@@ -8,45 +8,46 @@ namespace BlabberApp.DomainTest.Entities
     public class UserTest
     {
         [TestMethod]
-        public void TestSetGetUserID_Success()
+        public void TestSetGetEmail_Success()
         {
             // Arrange
             User harness = new User(); 
             string expected = "foobar@example.com";
-            harness.UserID = "foobar@example.com";
+            harness.ChangeEmail("foobar@example.com");
             // Act
-            string actual = harness.UserID; // Assert
-            Assert.AreEqual(actual, expected);
+            string actual = harness.Email; // Assert
+            Assert.AreEqual(actual.ToString(), expected.ToString());
         }
         [TestMethod]
-        public void TestSetGetUserID_Fail00()
+        public void TestSetGetEmail_Fail00()
+        {
+            // Arrange
+            User harness = new User(); 
+            
+            // Act
+            var ex = Assert.ThrowsException<FormatException>(() => harness.ChangeEmail("Foobar"));
+            // Assert
+            Assert.AreEqual("Email is invalid", ex.Message.ToString());
+        }
+        [TestMethod]
+        public void TestSetGetEmail_Fail01()
         {
             // Arrange
             User harness = new User(); 
             // Act
-            var ex = Assert.ThrowsException<FormatException>(() => harness.UserID = "Foobar");
+            var ex = Assert.ThrowsException<FormatException>(() => harness.ChangeEmail("example.com"));
             // Assert
-            Assert.AreEqual("DUH, not an email", ex.Message);
+            Assert.AreEqual("Email is invalid", ex.Message.ToString());
         }
         [TestMethod]
-        public void TestSetGetUserID_Fail01()
+        public void TestSetGetEmail_Fail02()
         {
             // Arrange
             User harness = new User(); 
             // Act
-            var ex = Assert.ThrowsException<FormatException>(() => harness.UserID = "example.com");
+            var ex = Assert.ThrowsException<FormatException>(() => harness.ChangeEmail("foobar.example"));
             // Assert
-            Assert.AreEqual("DUH, not an email", ex.Message);
-        }
-        [TestMethod]
-        public void TestSetGetUserID_Fail02()
-        {
-            // Arrange
-            User harness = new User(); 
-            // Act
-            var ex = Assert.ThrowsException<FormatException>(() => harness.UserID = "foobar.example");
-            // Assert
-            Assert.AreEqual("DUH, not an email", ex.Message);
+            Assert.AreEqual("Email is invalid", ex.Message.ToString());
         }
         [TestMethod]
         public void TestGetSysId()
@@ -57,7 +58,7 @@ namespace BlabberApp.DomainTest.Entities
             // Act
             string actual = harness.getSysId();
             // Assert
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(actual.ToString(), expected.ToString());
             Assert.AreEqual(true, harness.getSysId() is string);
         }
     }
