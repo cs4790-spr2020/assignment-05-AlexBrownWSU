@@ -11,3 +11,10 @@ BlabberApp.WebApiTest/obj
 BlabberApp.ClientTest/obj
 BlabberApp.ClientTest/obj/Debug/netcoreapp3.1/BlabberApp.ClientTest.assets.cache
 BlabberApp.DomainTest/bin
+BlabberApp.ClientTest/obj/BlabberApp.ClientTest.csproj.nuget.cache
+BlabberApp.ClientTest/obj/BlabberApp.ClientTest.csproj.nuget.dgspec.json
+BlabberApp.ClientTest/obj/project.assets.json
+BlabberApp.ClientTest/obj/BlabberApp.ClientTest.csproj.nuget.cache
+BlabberApp.WebApiTest/obj/BlabberApp.WebApiTest.csproj.nuget.cache
+BlabberApp.WebApiTest/obj/BlabberApp.WebApiTest.csproj.nuget.dgspec.json
+BlabberApp.WebApiTest/obj/project.assets.json

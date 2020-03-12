@@ -57,5 +57,14 @@ namespace BlabberApp.DataStore
 
             return _entities.SingleOrDefault(s => s.getSysId() == sysId);
         }
+
+        public T GetByUserId(string userId)
+        {
+            if ( userId.Equals(""))
+            {
+                throw new ArgumentNullException("userId");
+            }
+            return _entities.Find(userId);
+        }
     }
 }
