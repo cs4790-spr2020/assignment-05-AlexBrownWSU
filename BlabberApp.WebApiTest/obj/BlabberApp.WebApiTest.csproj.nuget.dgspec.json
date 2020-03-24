@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/stringhamdb/Documents/Weber State/2020-Spring-CS4790/BlabberApp/BlabberApp.WebApiTest/BlabberApp.WebApiTest.csproj": {}
+    "/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.WebApiTest/BlabberApp.WebApiTest.csproj": {}
   },
   "projects": {
-    "/Users/stringhamdb/Documents/Weber State/2020-Spring-CS4790/BlabberApp/BlabberApp.WebApiTest/BlabberApp.WebApiTest.csproj": {
+    "/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.WebApiTest/BlabberApp.WebApiTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/stringhamdb/Documents/Weber State/2020-Spring-CS4790/BlabberApp/BlabberApp.WebApiTest/BlabberApp.WebApiTest.csproj",
+        "projectUniqueName": "/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.WebApiTest/BlabberApp.WebApiTest.csproj",
         "projectName": "BlabberApp.WebApiTest",
-        "projectPath": "/Users/stringhamdb/Documents/Weber State/2020-Spring-CS4790/BlabberApp/BlabberApp.WebApiTest/BlabberApp.WebApiTest.csproj",
+        "projectPath": "/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.WebApiTest/BlabberApp.WebApiTest.csproj",
         "packagesPath": "/Users/stringhamdb/.nuget/packages/",
-        "outputPath": "/Users/stringhamdb/Documents/Weber State/2020-Spring-CS4790/BlabberApp/BlabberApp.WebApiTest/obj/",
+        "outputPath": "/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.WebApiTest/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
