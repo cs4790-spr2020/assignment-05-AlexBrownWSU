@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BlabberApp.Domain.Entities;
 
@@ -5,12 +6,16 @@ namespace BlabberApp.DomainTest.Entities
 {
     [TestClass]
     public class BlabTest
-    {
+    {       
+        private Blab harness;
+        public BlabTest() 
+        {
+            harness = new Blab();
+        }
         [TestMethod]
         public void TestSetGetMessage()
         {
             // Arrange
-            Blab harness = new Blab(); 
             string expected = "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."; 
             harness.Message = "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...";
             // Act
@@ -20,29 +25,15 @@ namespace BlabberApp.DomainTest.Entities
         }
 
         [TestMethod]
-        public void TestSetGetUserID()
+        public void TestId()
         {
             // Arrange
-            Blab harness = new Blab(); 
-            string expected = "foobar@example.com";
-            harness.UserID = "foobar@example.com";
+            Guid expected = harness.Id;
             // Act
-            string actual = harness.UserID;
+            Guid actual = harness.Id;
             // Assert
-            Assert.AreEqual(actual.ToString(), expected.ToString());
-        }
-
-        [TestMethod]
-        public void TestGetSysId()
-        {
-            // Arrange
-            Blab harness = new Blab();
-            string expected = harness.getSysId();
-            // Act
-            string actual = harness.getSysId();
-            // Assert
-            Assert.AreEqual(actual.ToString(), expected.ToString());
-            Assert.AreEqual(true, harness.getSysId() is string);
+            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(true, harness.Id is Guid);
         }
         
         [TestMethod]

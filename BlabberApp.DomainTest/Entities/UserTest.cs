@@ -50,16 +50,16 @@ namespace BlabberApp.DomainTest.Entities
             Assert.AreEqual("Email is invalid", ex.Message.ToString());
         }
         [TestMethod]
-        public void TestGetSysId()
+        public void TestId()
         {
             // Arrange
             User harness = new User();
-            string expected = harness.getSysId();
+            Guid expected = harness.Id;
             // Act
-            string actual = harness.getSysId();
+            Guid actual = harness.Id;
             // Assert
-            Assert.AreEqual(actual.ToString(), expected.ToString());
-            Assert.AreEqual(true, harness.getSysId() is string);
+            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(true, harness.Id is Guid);
         }
     }
 }
