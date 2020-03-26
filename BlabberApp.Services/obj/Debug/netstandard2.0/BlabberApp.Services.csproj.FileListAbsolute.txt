@@ -1,0 +1,13 @@
+/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Services/obj/Debug/netstandard2.0/BlabberApp.Services.csprojAssemblyReference.cache
+/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Services/obj/Debug/netstandard2.0/BlabberApp.Services.AssemblyInfoInputs.cache
+/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Services/obj/Debug/netstandard2.0/BlabberApp.Services.AssemblyInfo.cs
+/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Services/bin/Debug/netstandard2.0/BlabberApp.Services.deps.json
+/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Services/bin/Debug/netstandard2.0/BlabberApp.Services.dll
+/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Services/bin/Debug/netstandard2.0/BlabberApp.Services.pdb
+/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Services/bin/Debug/netstandard2.0/BlabberApp.DataStore.dll
+/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Services/bin/Debug/netstandard2.0/BlabberApp.Domain.dll
+/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Services/bin/Debug/netstandard2.0/BlabberApp.Domain.pdb
+/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Services/bin/Debug/netstandard2.0/BlabberApp.DataStore.pdb
+/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Services/obj/Debug/netstandard2.0/BlabberApp.Services.csproj.CopyComplete
+/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Services/obj/Debug/netstandard2.0/BlabberApp.Services.dll
+/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Services/obj/Debug/netstandard2.0/BlabberApp.Services.pdb

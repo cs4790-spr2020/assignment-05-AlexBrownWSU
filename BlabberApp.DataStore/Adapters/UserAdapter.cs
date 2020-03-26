@@ -2,9 +2,8 @@ using System;
 using System.Collections;
 using BlabberApp.DataStore.Interfaces;
 using BlabberApp.Domain.Entities;
-using BlabberApp.Domain.Interfaces;
 
-namespace BlabberApp.DataStore.Entities
+namespace BlabberApp.DataStore.Adapters
 {
     public class UserAdapter
     {

@@ -1,8 +1,6 @@
-using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BlabberApp.DataStore.Entities;
+using BlabberApp.DataStore.Adapters;
 using BlabberApp.DataStore.Plugins;
-using BlabberApp.Domain.Entities;
 
 namespace BlabberApp.DataStoreTest
 {

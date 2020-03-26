@@ -1,0 +1,3 @@
+/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.ServicesTest/obj/Debug/netstandard2.0/BlabberApp.ServicesTest.csprojAssemblyReference.cache
+/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.ServicesTest/obj/Debug/netstandard2.0/BlabberApp.ServicesTest.AssemblyInfoInputs.cache
+/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.ServicesTest/obj/Debug/netstandard2.0/BlabberApp.ServicesTest.AssemblyInfo.cs
