@@ -10,6 +10,17 @@ namespace BlabberApp.Domain.Entities
         public System.DateTime LastLoginDTTM { get; set; }
         public string Email { get; private set; }
 
+        public User()
+        {
+            this.Id = Guid.NewGuid();
+        }
+
+        public User(string email)
+        {
+            this.Id = Guid.NewGuid();
+            this.ChangeEmail(email); 
+        }
+
         public void ChangeEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email) || email.Length > 50)
