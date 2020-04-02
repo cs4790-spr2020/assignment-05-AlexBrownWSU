@@ -8,7 +8,7 @@ using BlabberApp.Domain.Interfaces;
 
 namespace BlabberApp.DataStore.Plugins
 {
-    public class MySqlBlab : IPlugin
+    public class MySqlBlab : IBlabPlugin
     {
         MySqlConnection dcBlab;
         public MySqlBlab()
@@ -33,7 +33,7 @@ namespace BlabberApp.DataStore.Plugins
             try
             {
                 DateTime now = DateTime.Now;
-                string sql = "INSERT INTO users (sys_id, message, dttm_created, user_id) VALUES ('"
+                string sql = "INSERT INTO blabs (sys_id, message, dttm_created, user_id) VALUES ('"
                      + blab.Id + "', '"
                      + blab.Message + "', '"
                      + now.ToString("yyyy-MM-dd HH:mm:ss") + "', '"
@@ -49,7 +49,29 @@ namespace BlabberApp.DataStore.Plugins
 
         public IEnumerable ReadAll()
         {
-            return null;
+            try
+            {
+                // SELECT * FROM blabs WHERE blabs.dttm_created NOT over a week ago SORTED DESC BY blabs.dttm_created
+                string sql = "SELECT * FROM blabs";
+                MySqlDataAdapter daBlabs = new MySqlDataAdapter(sql, this.dcBlab); // To avoid SQL injection.
+                MySqlCommandBuilder cbBlabs = new MySqlCommandBuilder(daBlabs);
+                DataSet dsBlabs = new DataSet();
+
+                daBlabs.Fill(dsBlabs);
+
+                ArrayList alBlabs = new ArrayList();
+
+                foreach( DataRow dtRow in dsBlabs.Tables[0].Rows)
+                {
+                    alBlabs.Add(dtRow);
+                }
+                
+                return alBlabs;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
         }
 
         public IEntity ReadById(Guid Id)
@@ -57,7 +79,6 @@ namespace BlabberApp.DataStore.Plugins
             try
             {
                 string sql = "SELECT * FROM blabs WHERE blabs.sys_id = '" + Id.ToString() + "'";
-                Console.WriteLine(sql);
                 MySqlDataAdapter daBlab = new MySqlDataAdapter(sql, this.dcBlab); // To avoid SQL injection.
                 MySqlCommandBuilder cbBlab = new MySqlCommandBuilder(daBlab);
                 DataSet dsBlab = new DataSet();
@@ -70,6 +91,32 @@ namespace BlabberApp.DataStore.Plugins
                 blab.Id = new Guid(row["sys_id"].ToString());
 
                 return blab;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+        }
+
+        public IEnumerable ReadByUserId(string email)
+        {
+            try
+            {
+                string sql = "SELECT * FROM blabs WHERE blabs.user_id = '" + email.ToString() + "'";
+                MySqlDataAdapter daBlabs = new MySqlDataAdapter(sql, this.dcBlab); // To avoid SQL injection.
+                MySqlCommandBuilder cbBlabs = new MySqlCommandBuilder(daBlabs);
+                DataSet dsBlabs = new DataSet();
+
+                daBlabs.Fill(dsBlabs);
+
+                ArrayList alBlabs = new ArrayList();
+
+                foreach( DataRow dtRow in dsBlabs.Tables[0].Rows)
+                {
+                    alBlabs.Add(dtRow);
+                }
+                
+                return alBlabs;
             }
             catch (Exception ex)
             {

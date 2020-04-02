@@ -9,21 +9,25 @@ namespace BlabberApp.Domain.Entities
         {
             this.User = new User();
             this.Message = "";
+            this.DTTM = DateTime.Now;
         }
         public Blab(string Message)
         {
             this.User = new User();
             this.Message = Message;
+            this.DTTM = DateTime.Now;
         }
         public Blab(User user)
         {
             this.User = user;
             this.Message = "";
+            this.DTTM = DateTime.Now;
         }
         public Blab(string Message, User user)
         {
             this.User = user;
             this.Message = Message;
+            this.DTTM = DateTime.Now;
         }
         public Guid Id { get; set; }
         public DateTime DTTM { get; }

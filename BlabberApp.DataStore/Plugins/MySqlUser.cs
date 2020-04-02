@@ -8,7 +8,7 @@ using BlabberApp.Domain.Interfaces;
 
 namespace BlabberApp.DataStore.Plugins
 {
-    public class MySqlUser : IPlugin
+    public class MySqlUser : IUserPlugin
     {
         MySqlConnection dcUser;
         public MySqlUser()
@@ -57,7 +57,32 @@ namespace BlabberApp.DataStore.Plugins
             try
             {
                 string sql = "SELECT * FROM users WHERE users.sys_id = '" + Id.ToString() + "'";
-                Console.WriteLine(sql);
+                MySqlDataAdapter daUser = new MySqlDataAdapter(sql, this.dcUser); // To avoid SQL injection.
+                MySqlCommandBuilder cbUser = new MySqlCommandBuilder(daUser);
+                DataSet dsUser = new DataSet();
+
+                daUser.Fill(dsUser, "users");
+
+                DataRow row = dsUser.Tables[0].Rows[0];
+                User user = new User();
+
+                user.Id = new Guid(row["sys_id"].ToString());
+                user.ChangeEmail(row["email"].ToString());
+                user.RegisterDTTM = (DateTime)row["dttm_registration"];
+                user.LastLoginDTTM = (DateTime)row["dttm_last_login"];
+
+                return user;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+        }
+        public IEntity ReadByUserEmail(string Id)
+        {
+            try
+            {
+                string sql = "SELECT * FROM users WHERE users.email = '" + Id.ToString() + "'";
                 MySqlDataAdapter daUser = new MySqlDataAdapter(sql, this.dcUser); // To avoid SQL injection.
                 MySqlCommandBuilder cbUser = new MySqlCommandBuilder(daUser);
                 DataSet dsUser = new DataSet();

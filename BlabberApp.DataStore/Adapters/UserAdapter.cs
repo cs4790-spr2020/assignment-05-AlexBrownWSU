@@ -7,9 +7,9 @@ namespace BlabberApp.DataStore.Adapters
 {
     public class UserAdapter
     {
-       private IPlugin plugin;
+       private IUserPlugin plugin;
 
-       public UserAdapter(IPlugin plugin)
+       public UserAdapter(IUserPlugin plugin)
        {
            this.plugin = plugin;
        }
@@ -37,6 +37,11 @@ namespace BlabberApp.DataStore.Adapters
        public User GetById(Guid Id)
        {
            return (User)this.plugin.ReadById(Id);
+       }
+
+       public User GetByEmail(string email)
+       {
+           return (User)this.plugin.ReadByUserEmail(email);
        }
     }
 }

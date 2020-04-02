@@ -7,9 +7,9 @@ namespace BlabberApp.DataStore.Adapters
 {
     public class BlabAdapter
     {
-       private IPlugin plugin;
+       private IBlabPlugin plugin;
 
-       public BlabAdapter(IPlugin plugin)
+       public BlabAdapter(IBlabPlugin plugin)
        {
            this.plugin = plugin;
        }
@@ -37,6 +37,10 @@ namespace BlabberApp.DataStore.Adapters
        public Blab GetById(Guid Id)
        {
            return (Blab)this.plugin.ReadById(Id);
+       }
+       public IEnumerable GetByUserId(string Id)
+       {
+           return this.plugin.ReadByUserId(Id);
        }
     }
 }
