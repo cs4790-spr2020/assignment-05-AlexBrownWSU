@@ -18,3 +18,11 @@ BlabberApp.ClientTest/obj/BlabberApp.ClientTest.csproj.nuget.cache
 BlabberApp.WebApiTest/obj/BlabberApp.WebApiTest.csproj.nuget.cache
 BlabberApp.WebApiTest/obj/BlabberApp.WebApiTest.csproj.nuget.dgspec.json
 BlabberApp.WebApiTest/obj/project.assets.json
+BlabberApp.Services/obj/BlabberApp.Services.csproj.nuget.cache
+BlabberApp.Services/obj/BlabberApp.Services.csproj.nuget.dgspec.json
+BlabberApp.Services/obj/BlabberApp.Services.csproj.nuget.g.props
+BlabberApp.Services/obj/BlabberApp.Services.csproj.nuget.g.targets
+BlabberApp.Services/obj/project.assets.json
+BlabberApp.Services/obj/Debug/netstandard2.0/BlabberApp.Services.AssemblyInfo.cs
+BlabberApp.Services/obj/Debug/netstandard2.0/BlabberApp.Services.AssemblyInfoInputs.cache
+BlabberApp.Services/obj/Debug/netstandard2.0/BlabberApp.Services.assets.cache
