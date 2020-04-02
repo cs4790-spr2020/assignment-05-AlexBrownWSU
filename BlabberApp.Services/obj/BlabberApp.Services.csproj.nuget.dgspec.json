@@ -43,13 +43,9 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.InMemory": {
+            "MySql.Data.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.2, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[8.0.19, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",
