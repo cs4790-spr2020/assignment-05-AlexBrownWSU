@@ -10,13 +10,13 @@ namespace BlabberApp.DataStore.Plugins
 {
     public class MySqlUser : IUserPlugin
     {
-        MySqlConnection dcUser;
+        MySqlConnection _dcUser;
         public MySqlUser()
         {
-            this.dcUser = new MySqlConnection("server=142.93.114.73;database=donbstringham;user=donbstringham;password=letmein");
+            _dcUser = new MySqlConnection("server=142.93.114.73;database=donbstringham;user=donbstringham;password=letmein");
             try
             {
-                this.dcUser.Open();
+                _dcUser.Open();
             }
             catch (Exception ex)
             {
@@ -25,7 +25,7 @@ namespace BlabberApp.DataStore.Plugins
         }
         public void Close()
         {
-            this.dcUser.Close();
+            _dcUser.Close();
         }
         public void Create(IEntity obj)
         {
@@ -38,7 +38,7 @@ namespace BlabberApp.DataStore.Plugins
                      + user.Email + "', '"
                      + now.ToString("yyyy-MM-dd HH:mm:ss")
                      + "', '" + now.ToString("yyyy-MM-dd HH:mm:ss") + "')";
-                MySqlCommand cmd = new MySqlCommand(sql, this.dcUser);
+                MySqlCommand cmd = new MySqlCommand(sql, _dcUser);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -57,7 +57,7 @@ namespace BlabberApp.DataStore.Plugins
             try
             {
                 string sql = "SELECT * FROM users WHERE users.sys_id = '" + Id.ToString() + "'";
-                MySqlDataAdapter daUser = new MySqlDataAdapter(sql, this.dcUser); // To avoid SQL injection.
+                MySqlDataAdapter daUser = new MySqlDataAdapter(sql, _dcUser); // To avoid SQL injection.
                 MySqlCommandBuilder cbUser = new MySqlCommandBuilder(daUser);
                 DataSet dsUser = new DataSet();
 
@@ -83,7 +83,7 @@ namespace BlabberApp.DataStore.Plugins
             try
             {
                 string sql = "SELECT * FROM users WHERE users.email = '" + Id.ToString() + "'";
-                MySqlDataAdapter daUser = new MySqlDataAdapter(sql, this.dcUser); // To avoid SQL injection.
+                MySqlDataAdapter daUser = new MySqlDataAdapter(sql, _dcUser); // To avoid SQL injection.
                 MySqlCommandBuilder cbUser = new MySqlCommandBuilder(daUser);
                 DataSet dsUser = new DataSet();
 

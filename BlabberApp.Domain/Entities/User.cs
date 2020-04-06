@@ -31,7 +31,7 @@ namespace BlabberApp.Domain.Entities
             }
             catch (FormatException)
             {
-                throw new FormatException("Email is invalid");
+                throw new FormatException(email + " is invalid");
             }
             Email = email;
         }

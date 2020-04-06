@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BlabberApp.Services\BlabberApp.Services.csproj" />
+    <ProjectReference Include="..\BlabberApp.Domain\BlabberApp.Domain.csproj" />
   </ItemGroup>
 
 </Project>

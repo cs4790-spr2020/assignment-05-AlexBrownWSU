@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using BlabberApp.DataStore.Interfaces;
+using BlabberApp.Domain.Entities;
 using BlabberApp.Domain.Interfaces;
 
 namespace BlabberApp.DataStore.Plugins
@@ -37,6 +38,13 @@ namespace BlabberApp.DataStore.Plugins
         }
         public IEntity ReadByUserEmail(string email)
         {
+            foreach(User user in buffer)
+            {
+                if (user.Email.Equals(email))
+                {
+                    return user;
+                }
+            }
             return null;
         }
 

@@ -7,41 +7,41 @@ namespace BlabberApp.DataStore.Adapters
 {
     public class UserAdapter
     {
-       private IUserPlugin plugin;
+       private readonly IUserPlugin _plugin;
 
        public UserAdapter(IUserPlugin plugin)
        {
-           this.plugin = plugin;
+           _plugin = plugin;
        }
 
        public void Add(User user)
        {
-           this.plugin.Create(user);
+           _plugin.Create(user);
        }
 
        public void Remove(User user)
        {
-           this.plugin.Delete(user);
+           _plugin.Delete(user);
        }
 
        public void Update(User user)
        {
-           this.plugin.Update(user);
+           _plugin.Update(user);
        }
 
        public IEnumerable GetAll()
        {
-           return this.plugin.ReadAll();
+           return _plugin.ReadAll();
        }
 
        public User GetById(Guid Id)
        {
-           return (User)this.plugin.ReadById(Id);
+           return (User)_plugin.ReadById(Id);
        }
 
        public User GetByEmail(string email)
        {
-           return (User)this.plugin.ReadByUserEmail(email);
+           return (User)_plugin.ReadByUserEmail(email);
        }
     }
 }

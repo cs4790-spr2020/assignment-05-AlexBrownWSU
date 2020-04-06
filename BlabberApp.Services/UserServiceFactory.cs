@@ -1,30 +1,23 @@
 using BlabberApp.DataStore.Adapters;
 using BlabberApp.DataStore.Interfaces;
 using BlabberApp.DataStore.Plugins;
-using BlabberApp.Domain.Entities;
 
 namespace BlabberApp.Services
 {
     public class UserServiceFactory
     {
-        public UserAdapter BuildUserAdapter(IUserPlugin plugin = null)
+        public UserAdapter CreateUserAdapter(IUserPlugin plugin = null)
         {
             if (plugin == null)
             {
-                plugin = this.BuildUserPlugin();
+                plugin = this.CreateUserPlugin();
             }
 
             return new UserAdapter(plugin);
         }
-
-        public User Build(string email = "")
+        public IUserPlugin CreateUserPlugin(string type = "")
         {
-            return new User();
-        }
-
-        public IUserPlugin BuildUserPlugin(string type = "")
-        {
-            if (type.Equals("MySQL"))
+            if (type.ToUpper().Equals("MYSQL"))
             {
                 return new MySqlUser();
             }
@@ -32,11 +25,11 @@ namespace BlabberApp.Services
             return new InMemory();
         }
 
-        public UserService BuildUserService(UserAdapter adapter = null)
+        public UserService CreateUserService(UserAdapter adapter = null)
         {
             if (adapter == null)
             {
-                adapter = this.BuildUserAdapter();
+                adapter = this.CreateUserAdapter();
             }
 
             return new UserService(adapter);
