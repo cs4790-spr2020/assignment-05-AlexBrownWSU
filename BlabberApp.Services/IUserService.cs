@@ -1,6 +1,5 @@
 using System.Collections;
 using BlabberApp.Domain.Entities;
-using BlabberApp.Domain.Interfaces;
 
 namespace BlabberApp.Services
 {
