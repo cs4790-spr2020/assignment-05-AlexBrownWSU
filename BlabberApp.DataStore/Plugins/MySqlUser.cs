@@ -49,7 +49,28 @@ namespace BlabberApp.DataStore.Plugins
 
         public IEnumerable ReadAll()
         {
-            return null;
+            try
+            {
+                string sql = "SELECT * FROM users";
+                MySqlDataAdapter daUser = new MySqlDataAdapter(sql, _dcUser); // To avoid SQL injection.
+                MySqlCommandBuilder cbUser = new MySqlCommandBuilder(daUser);
+                DataSet dsUsers = new DataSet();
+
+                daUser.Fill(dsUsers, "users");
+
+                ArrayList users = new ArrayList();
+
+                foreach (DataRow row in dsUsers.Tables[0].Rows)
+                {
+                    users.Add(DataRow2User(row));
+                }
+
+                return users;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
         }
 
         public IEntity ReadById(Guid Id)
@@ -64,14 +85,8 @@ namespace BlabberApp.DataStore.Plugins
                 daUser.Fill(dsUser, "users");
 
                 DataRow row = dsUser.Tables[0].Rows[0];
-                User user = new User();
 
-                user.Id = new Guid(row["sys_id"].ToString());
-                user.ChangeEmail(row["email"].ToString());
-                user.RegisterDTTM = (DateTime)row["dttm_registration"];
-                user.LastLoginDTTM = (DateTime)row["dttm_last_login"];
-
-                return user;
+                return DataRow2User(row);
             }
             catch (Exception ex)
             {
@@ -90,14 +105,8 @@ namespace BlabberApp.DataStore.Plugins
                 daUser.Fill(dsUser, "users");
 
                 DataRow row = dsUser.Tables[0].Rows[0];
-                User user = new User();
-
-                user.Id = new Guid(row["sys_id"].ToString());
-                user.ChangeEmail(row["email"].ToString());
-                user.RegisterDTTM = (DateTime)row["dttm_registration"];
-                user.LastLoginDTTM = (DateTime)row["dttm_last_login"];
-
-                return user;
+                
+                return DataRow2User(row);
             }
             catch (Exception ex)
             {
@@ -113,6 +122,25 @@ namespace BlabberApp.DataStore.Plugins
         public void Delete(IEntity obj)
         {
             User user = (User)obj;
+            try{
+                string sql = "DELETE FROM users WHERE users.email='"+user.Email+"'";
+                MySqlCommand cmd = new MySqlCommand(sql, _dcUser);
+                cmd.ExecuteNonQuery();
+            } catch(Exception ex) {
+                throw new Exception(ex.ToString());
+            }
+        }
+
+        private User DataRow2User(DataRow row)
+        {
+            User user = new User();
+
+            user.Id = new Guid(row["sys_id"].ToString());
+            user.ChangeEmail(row["email"].ToString());
+            user.RegisterDTTM = (DateTime)row["dttm_registration"];
+            user.LastLoginDTTM = (DateTime)row["dttm_last_login"];
+
+            return user;
         }
     }
 }
