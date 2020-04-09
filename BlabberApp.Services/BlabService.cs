@@ -27,13 +27,16 @@ namespace BlabberApp.Services
         }
         public IEnumerable FindUserBlabs(string email)
         {
-            return null;
+            throw new NotImplementedException("FindUserBlabs");
         }
-
         public Blab CreateBlab(string msg, string email)
         {
             User usr = new User(email);
             return new Blab(msg, usr);
+        }
+        public Blab CreateBlab(string msg, User user)
+        {
+            return new Blab(msg, user);
         }
     }
 }
