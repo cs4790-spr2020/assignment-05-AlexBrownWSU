@@ -35,7 +35,7 @@ namespace BlabberApp.DataStore.Plugins
                 DateTime now = DateTime.Now;
                 string sql = "INSERT INTO blabs (sys_id, message, dttm_created, user_id) VALUES ('"
                      + blab.Id + "', '"
-                     + blab.Message + "', '"
+                     + MySql.Data.MySqlClient.MySqlHelper.EscapeString(blab.Message) + "', '"
                      + now.ToString("yyyy-MM-dd HH:mm:ss") + "', '"
                      + blab.User.Email + "')";
                 MySqlCommand cmd = new MySqlCommand(sql, this.dcBlab);
