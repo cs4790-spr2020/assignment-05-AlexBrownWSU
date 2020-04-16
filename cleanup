@@ -27,3 +27,5 @@ rm -fr ./BlabberApp.Services/bin
 rm -fr ./BlabberApp.ServicesTest/bin
 rm -fr ./BlabberApp.WebApi/bin
 rm -fr ./BlabberApp.WebApiTest/bin
+
+rm -fr ./tools
