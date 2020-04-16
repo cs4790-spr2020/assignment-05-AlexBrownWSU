@@ -9,7 +9,19 @@ namespace BlabberApp.DataStoreTest
     [TestClass]
     public class BlabAdapter_MySql_UnitTests
     {
-        private BlabAdapter _harness = new BlabAdapter(new MySqlBlab());
+        private BlabAdapter _harness;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            _harness = new BlabAdapter(new MySqlBlab());
+            _harness.RemoveAll();
+        }
+        [TestCleanup]
+        public void TearDown()
+        {
+            _harness.RemoveAll();
+        }
 
         [TestMethod]
         public void Canary()

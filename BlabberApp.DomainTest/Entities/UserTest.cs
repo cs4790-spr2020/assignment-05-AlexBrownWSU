@@ -23,31 +23,33 @@ namespace BlabberApp.DomainTest.Entities
         {
             // Arrange
             User harness = new User(); 
-            
+            var expected = "Foobar is invalid";
             // Act
             var ex = Assert.ThrowsException<FormatException>(() => harness.ChangeEmail("Foobar"));
             // Assert
-            Assert.AreEqual("Email is invalid", ex.Message.ToString());
+            Assert.AreEqual(expected, ex.Message.ToString());
         }
         [TestMethod]
         public void TestSetGetEmail_Fail01()
         {
             // Arrange
             User harness = new User(); 
+            var expected = "example.com is invalid";
             // Act
             var ex = Assert.ThrowsException<FormatException>(() => harness.ChangeEmail("example.com"));
             // Assert
-            Assert.AreEqual("Email is invalid", ex.Message.ToString());
+            Assert.AreEqual(expected, ex.Message.ToString());
         }
         [TestMethod]
         public void TestSetGetEmail_Fail02()
         {
             // Arrange
             User harness = new User(); 
+            var expected = "foobar.example is invalid";
             // Act
             var ex = Assert.ThrowsException<FormatException>(() => harness.ChangeEmail("foobar.example"));
             // Assert
-            Assert.AreEqual("Email is invalid", ex.Message.ToString());
+            Assert.AreEqual(expected, ex.Message.ToString());
         }
         [TestMethod]
         public void TestId()
