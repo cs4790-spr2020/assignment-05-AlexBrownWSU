@@ -101,5 +101,9 @@ namespace BlabberApp.DataStore.Adapters
                 throw new UserAdapterNotFoundException(ex.ToString());
             }
         }
+        public void UpdateEmailById(Guid Id, String email)
+       {
+           _plugin.UpdateEmailById(Id, email);
+       }
     }
 }

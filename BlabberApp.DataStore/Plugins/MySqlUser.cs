@@ -13,7 +13,7 @@ namespace BlabberApp.DataStore.Plugins
         MySqlConnection _dcUser;
         public MySqlUser()
         {
-            _dcUser = new MySqlConnection("server=142.93.114.73;database=donbstringham;user=donbstringham;password=letmein");
+            _dcUser = new MySqlConnection("server=142.93.114.73;database=AlexBrownWSU;user=AlexBrownWSU;password=letmein");
             try
             {
                 _dcUser.Open();
@@ -148,6 +148,16 @@ namespace BlabberApp.DataStore.Plugins
             user.LastLoginDTTM = (DateTime)row["dttm_last_login"];
 
             return user;
+        }
+        public void UpdateEmailById(Guid Id, String Email)
+        {
+            try{
+                string sql = "UPDATE users SET email = '"+Email+"' WHERE users.sys_id='"+Id.ToString()+"'";
+                MySqlCommand cmd = new MySqlCommand(sql, _dcUser);
+                cmd.ExecuteNonQuery();
+            } catch(Exception ex) {
+                throw new Exception(ex.ToString());
+            }
         }
     }
 }

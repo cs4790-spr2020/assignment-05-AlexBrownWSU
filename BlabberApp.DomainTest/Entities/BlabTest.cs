@@ -16,12 +16,23 @@ namespace BlabberApp.DomainTest.Entities
         public void TestSetGetMessage()
         {
             // Arrange
-            string expected = "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."; 
-            harness.Message = "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...";
+            string expected = "test"; 
+            harness.Message = "test";
             // Act
             string actual = harness.Message;
             // Assert
             Assert.AreEqual(actual, expected);
+        }
+
+        [TestMethod]
+        public void TestUpdateMessage()
+        {
+            // Arrange
+            Blab actual = new Blab("test");
+            // Act
+            actual.Message = harness.Message;
+            // Assert
+            Assert.AreEqual(actual.Message, harness.Message);
         }
 
         [TestMethod]

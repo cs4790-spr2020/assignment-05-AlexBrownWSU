@@ -35,7 +35,7 @@ namespace BlabberApp.Domain.Entities
             }
             Email = email;
         }
-        public bool IsValid()
+        /*public bool IsValid()
         {
             if (this.Id == null) throw new ArgumentNullException();
             if (this.Email == null) throw new ArgumentNullException();
@@ -43,6 +43,6 @@ namespace BlabberApp.Domain.Entities
             if (this.LastLoginDTTM == null) throw new ArgumentNullException();
             if (this.RegisterDTTM == null) throw new ArgumentNullException();
             return true;
-        }
+        }*/
     }
 }

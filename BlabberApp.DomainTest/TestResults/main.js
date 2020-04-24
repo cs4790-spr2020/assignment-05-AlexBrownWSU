@@ -224,8 +224,8 @@ var assemblies = [
   {
     "name": "Default",
     "classes": [
-      { "name": "/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Domain/Entities/Blab.cs", "rp": "_Users_stringhamdb_Documents_GitHub_cs4790_spr2020_BlabberApp_BlabberApp.Domain_Entities_Blab.cs.htm", "cl": 10, "ucl": 25, "cal": 35, "tl": 46, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Domain/Entities/User.cs", "rp": "_Users_stringhamdb_Documents_GitHub_cs4790_spr2020_BlabberApp_BlabberApp.Domain_Entities_User.cs.htm", "cl": 16, "ucl": 16, "cal": 32, "tl": 48, "ct": "LineCoverage", "mc": "-", "cb": 2, "tb": 14, "lch": [], "bch": [], "hc": [] },
+      { "name": "/Users/alexbrown/Desktop/BlabberApp/BlabberApp/BlabberApp.Domain/Entities/Blab.cs", "rp": "_Users_alexbrown_Desktop_BlabberApp_BlabberApp_BlabberApp.Domain_Entities_Blab.cs.htm", "cl": 17, "ucl": 15, "cal": 32, "tl": 46, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "/Users/alexbrown/Desktop/BlabberApp/BlabberApp/BlabberApp.Domain/Entities/User.cs", "rp": "_Users_alexbrown_Desktop_BlabberApp_BlabberApp_BlabberApp.Domain_Entities_User.cs.htm", "cl": 21, "ucl": 3, "cal": 24, "tl": 48, "ct": "LineCoverage", "mc": "-", "cb": 2, "tb": 4, "lch": [], "bch": [], "hc": [] },
     ]},
 ];
 

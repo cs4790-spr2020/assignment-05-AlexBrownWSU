@@ -8,6 +8,14 @@ namespace BlabberApp.DomainTest.Entities
     public class UserTest
     {
         [TestMethod]
+        public void TestUser()
+        {
+            User user = new User();
+            Guid actual = user.Id;
+            Assert.AreEqual(user.Id, actual);   
+        }
+        
+        [TestMethod]
         public void TestSetGetEmail_Success()
         {
             // Arrange
@@ -52,6 +60,15 @@ namespace BlabberApp.DomainTest.Entities
             Assert.AreEqual(expected, ex.Message.ToString());
         }
         [TestMethod]
+        public void TestUpdateUserEmail()
+        {
+            User user = new User("example@example.com");
+            User actual = user;
+            user.ChangeEmail("example2@example.org");
+            Assert.AreEqual(user.Email, actual.Email);   
+        }
+
+        [TestMethod]
         public void TestId()
         {
             // Arrange
@@ -62,6 +79,10 @@ namespace BlabberApp.DomainTest.Entities
             // Assert
             Assert.AreEqual(actual, expected);
             Assert.AreEqual(true, harness.Id is Guid);
+        }
+        [TestMethod]
+        public void TestLostLogin() {
+
         }
     }
 }

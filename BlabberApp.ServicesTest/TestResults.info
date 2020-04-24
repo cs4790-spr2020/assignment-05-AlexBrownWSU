@@ -1,4 +1,4 @@
-SF:/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Services/BlabService.cs
+SF:/Users/alexbrown/Desktop/BlabberApp/BlabberApp/BlabberApp.Services/BlabService.cs
 FN:11,System.Void BlabberApp.Services.BlabService::AddBlab(System.String,System.String)
 FNDA:0,System.Void BlabberApp.Services.BlabService::AddBlab(System.String,System.String)
 DA:12,0
@@ -42,7 +42,7 @@ BRH:0
 FNF:7
 FNH:5
 end_of_record
-SF:/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Services/BlabServiceFactory.cs
+SF:/Users/alexbrown/Desktop/BlabberApp/BlabberApp/BlabberApp.Services/BlabServiceFactory.cs
 FN:9,BlabberApp.DataStore.Adapters.BlabAdapter BlabberApp.Services.BlabServiceFactory::CreateBlabAdapter(BlabberApp.DataStore.Interfaces.IBlabPlugin)
 FNDA:4,BlabberApp.DataStore.Adapters.BlabAdapter BlabberApp.Services.BlabServiceFactory::CreateBlabAdapter(BlabberApp.DataStore.Interfaces.IBlabPlugin)
 DA:10,4
@@ -82,7 +82,7 @@ BRH:5
 FNF:3
 FNH:3
 end_of_record
-SF:/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Services/UserService.cs
+SF:/Users/alexbrown/Desktop/BlabberApp/BlabberApp/BlabberApp.Services/UserService.cs
 FN:16,System.Collections.IEnumerable BlabberApp.Services.UserService::GetAll()
 FNDA:1,System.Collections.IEnumerable BlabberApp.Services.UserService::GetAll()
 DA:17,1
@@ -121,7 +121,7 @@ BRH:0
 FNF:5
 FNH:5
 end_of_record
-SF:/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Services/UserServiceFactory.cs
+SF:/Users/alexbrown/Desktop/BlabberApp/BlabberApp/BlabberApp.Services/UserServiceFactory.cs
 FN:9,BlabberApp.DataStore.Adapters.UserAdapter BlabberApp.Services.UserServiceFactory::CreateUserAdapter(BlabberApp.DataStore.Interfaces.IUserPlugin)
 FNDA:4,BlabberApp.DataStore.Adapters.UserAdapter BlabberApp.Services.UserServiceFactory::CreateUserAdapter(BlabberApp.DataStore.Interfaces.IUserPlugin)
 DA:10,4
@@ -161,7 +161,7 @@ BRH:5
 FNF:3
 FNH:3
 end_of_record
-SF:/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.DataStore/Plugins/InMemory.cs
+SF:/Users/alexbrown/Desktop/BlabberApp/BlabberApp/BlabberApp.DataStore/Plugins/InMemory.cs
 FN:17,System.Void BlabberApp.DataStore.Plugins.InMemory::Create(BlabberApp.Domain.Interfaces.IEntity)
 FNDA:2,System.Void BlabberApp.DataStore.Plugins.InMemory::Create(BlabberApp.Domain.Interfaces.IEntity)
 DA:18,2
@@ -220,20 +220,28 @@ FNDA:0,System.Void BlabberApp.DataStore.Plugins.InMemory::DeleteAll()
 DA:62,0
 DA:63,0
 DA:64,0
+FN:65,System.Void BlabberApp.DataStore.Plugins.InMemory::UpdateBlabById(System.Guid,System.String)
+FNDA:0,System.Void BlabberApp.DataStore.Plugins.InMemory::UpdateBlabById(System.Guid,System.String)
+DA:66,0
+DA:68,0
+FN:69,System.Void BlabberApp.DataStore.Plugins.InMemory::UpdateEmailById(System.Guid,System.String)
+FNDA:0,System.Void BlabberApp.DataStore.Plugins.InMemory::UpdateEmailById(System.Guid,System.String)
+DA:70,0
+DA:72,0
 FN:11,System.Void BlabberApp.DataStore.Plugins.InMemory::.ctor()
 FNDA:8,System.Void BlabberApp.DataStore.Plugins.InMemory::.ctor()
 DA:12,8
 DA:13,8
 DA:14,8
 DA:15,8
-LF:38
+LF:42
 LH:18
 BRF:8
 BRH:3
-FNF:9
+FNF:11
 FNH:4
 end_of_record
-SF:/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.DataStore/Plugins/MySqlBlab.cs
+SF:/Users/alexbrown/Desktop/BlabberApp/BlabberApp/BlabberApp.DataStore/Plugins/MySqlBlab.cs
 FN:26,System.Void BlabberApp.DataStore.Plugins.MySqlBlab::Close()
 FNDA:0,System.Void BlabberApp.DataStore.Plugins.MySqlBlab::Close()
 DA:27,0
@@ -344,6 +352,18 @@ DA:151,0
 DA:152,0
 DA:154,0
 DA:155,0
+FN:156,System.Void BlabberApp.DataStore.Plugins.MySqlBlab::UpdateBlabById(System.Guid,System.String)
+FNDA:0,System.Void BlabberApp.DataStore.Plugins.MySqlBlab::UpdateBlabById(System.Guid,System.String)
+DA:157,0
+DA:159,0
+DA:160,0
+DA:161,0
+DA:162,0
+DA:163,0
+DA:165,0
+DA:166,0
+DA:167,0
+DA:169,0
 FN:13,System.Void BlabberApp.DataStore.Plugins.MySqlBlab::.ctor()
 FNDA:0,System.Void BlabberApp.DataStore.Plugins.MySqlBlab::.ctor()
 DA:14,0
@@ -356,14 +376,14 @@ DA:21,0
 DA:22,0
 DA:23,0
 DA:25,0
-LF:98
+LF:108
 LH:0
 BRF:4
 BRH:0
-FNF:10
+FNF:11
 FNH:0
 end_of_record
-SF:/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.DataStore/Plugins/MySqlUser.cs
+SF:/Users/alexbrown/Desktop/BlabberApp/BlabberApp/BlabberApp.DataStore/Plugins/MySqlUser.cs
 FN:26,System.Void BlabberApp.DataStore.Plugins.MySqlUser::Close()
 FNDA:0,System.Void BlabberApp.DataStore.Plugins.MySqlUser::Close()
 DA:27,0
@@ -471,6 +491,16 @@ DA:147,0
 DA:148,0
 DA:150,0
 DA:151,0
+FN:152,System.Void BlabberApp.DataStore.Plugins.MySqlUser::UpdateEmailById(System.Guid,System.String)
+FNDA:0,System.Void BlabberApp.DataStore.Plugins.MySqlUser::UpdateEmailById(System.Guid,System.String)
+DA:153,0
+DA:154,0
+DA:155,0
+DA:156,0
+DA:157,0
+DA:158,0
+DA:159,0
+DA:161,0
 FN:13,System.Void BlabberApp.DataStore.Plugins.MySqlUser::.ctor()
 FNDA:0,System.Void BlabberApp.DataStore.Plugins.MySqlUser::.ctor()
 DA:14,0
@@ -483,14 +513,14 @@ DA:21,0
 DA:22,0
 DA:23,0
 DA:25,0
-LF:97
+LF:105
 LH:0
 BRF:2
 BRH:0
-FNF:10
+FNF:11
 FNH:0
 end_of_record
-SF:/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.DataStore/Exceptions/BlabAdapterExceptions.cs
+SF:/Users/alexbrown/Desktop/BlabberApp/BlabberApp/BlabberApp.DataStore/Exceptions/BlabAdapterExceptions.cs
 FN:6,System.Void BlabberApp.DataStore.Exceptions.BlabAdapterException::.ctor(System.String)
 FNDA:0,System.Void BlabberApp.DataStore.Exceptions.BlabAdapterException::.ctor(System.String)
 DA:7,0
@@ -518,7 +548,7 @@ BRH:0
 FNF:4
 FNH:0
 end_of_record
-SF:/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.DataStore/Exceptions/UserAdapterExceptions.cs
+SF:/Users/alexbrown/Desktop/BlabberApp/BlabberApp/BlabberApp.DataStore/Exceptions/UserAdapterExceptions.cs
 FN:6,System.Void BlabberApp.DataStore.Exceptions.UserAdapterException::.ctor(System.String)
 FNDA:0,System.Void BlabberApp.DataStore.Exceptions.UserAdapterException::.ctor(System.String)
 DA:7,0
@@ -556,7 +586,7 @@ BRH:0
 FNF:6
 FNH:1
 end_of_record
-SF:/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.DataStore/Adapters/BlabAdapter.cs
+SF:/Users/alexbrown/Desktop/BlabberApp/BlabberApp/BlabberApp.DataStore/Adapters/BlabAdapter.cs
 FN:17,System.Void BlabberApp.DataStore.Adapters.BlabAdapter::Add(BlabberApp.Domain.Entities.Blab)
 FNDA:1,System.Void BlabberApp.DataStore.Adapters.BlabAdapter::Add(BlabberApp.Domain.Entities.Blab)
 DA:18,1
@@ -592,20 +622,30 @@ FNDA:0,System.Collections.IEnumerable BlabberApp.DataStore.Adapters.BlabAdapter:
 DA:46,0
 DA:47,0
 DA:48,0
+FN:49,BlabberApp.Domain.Entities.Blab BlabberApp.DataStore.Adapters.BlabAdapter::GetByBlabId(System.Guid)
+FNDA:0,BlabberApp.Domain.Entities.Blab BlabberApp.DataStore.Adapters.BlabAdapter::GetByBlabId(System.Guid)
+DA:50,0
+DA:51,0
+DA:52,0
+FN:53,System.Void BlabberApp.DataStore.Adapters.BlabAdapter::UpdateBlabById(System.Guid,System.String)
+FNDA:0,System.Void BlabberApp.DataStore.Adapters.BlabAdapter::UpdateBlabById(System.Guid,System.String)
+DA:54,0
+DA:55,0
+DA:56,0
 FN:11,System.Void BlabberApp.DataStore.Adapters.BlabAdapter::.ctor(BlabberApp.DataStore.Interfaces.IBlabPlugin)
 FNDA:4,System.Void BlabberApp.DataStore.Adapters.BlabAdapter::.ctor(BlabberApp.DataStore.Interfaces.IBlabPlugin)
 DA:12,4
 DA:13,4
 DA:14,4
 DA:15,4
-LF:25
+LF:31
 LH:10
 BRF:0
 BRH:0
-FNF:8
+FNF:10
 FNH:3
 end_of_record
-SF:/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.DataStore/Adapters/UserAdapter.cs
+SF:/Users/alexbrown/Desktop/BlabberApp/BlabberApp/BlabberApp.DataStore/Adapters/UserAdapter.cs
 FN:18,System.Void BlabberApp.DataStore.Adapters.UserAdapter::Add(BlabberApp.Domain.Entities.User)
 FNDA:1,System.Void BlabberApp.DataStore.Adapters.UserAdapter::Add(BlabberApp.Domain.Entities.User)
 DA:19,1
@@ -676,20 +716,25 @@ DA:99,1
 DA:100,1
 DA:101,1
 DA:103,1
+FN:104,System.Void BlabberApp.DataStore.Adapters.UserAdapter::UpdateEmailById(System.Guid,System.String)
+FNDA:0,System.Void BlabberApp.DataStore.Adapters.UserAdapter::UpdateEmailById(System.Guid,System.String)
+DA:105,0
+DA:106,0
+DA:107,0
 FN:12,System.Void BlabberApp.DataStore.Adapters.UserAdapter::.ctor(BlabberApp.DataStore.Interfaces.IUserPlugin)
 FNDA:4,System.Void BlabberApp.DataStore.Adapters.UserAdapter::.ctor(BlabberApp.DataStore.Interfaces.IUserPlugin)
 DA:13,4
 DA:14,4
 DA:15,4
 DA:16,4
-LF:60
+LF:63
 LH:25
 BRF:0
 BRH:0
-FNF:8
+FNF:9
 FNH:4
 end_of_record
-SF:/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Domain/Entities/Blab.cs
+SF:/Users/alexbrown/Desktop/BlabberApp/BlabberApp/BlabberApp.Domain/Entities/Blab.cs
 FN:35,System.Guid BlabberApp.Domain.Entities.Blab::get_Id()
 FNDA:0,System.Guid BlabberApp.Domain.Entities.Blab::get_Id()
 DA:36,0
@@ -702,11 +747,6 @@ DA:38,0
 FN:38,BlabberApp.Domain.Entities.User BlabberApp.Domain.Entities.Blab::get_User()
 FNDA:0,BlabberApp.Domain.Entities.User BlabberApp.Domain.Entities.Blab::get_User()
 DA:39,0
-FN:40,System.Boolean BlabberApp.Domain.Entities.Blab::IsValid()
-FNDA:0,System.Boolean BlabberApp.Domain.Entities.Blab::IsValid()
-DA:41,0
-DA:43,0
-DA:44,0
 FN:7,System.Void BlabberApp.Domain.Entities.Blab::.ctor()
 FNDA:0,System.Void BlabberApp.Domain.Entities.Blab::.ctor()
 DA:8,0
@@ -743,14 +783,14 @@ DA:32,1
 DA:33,1
 DA:34,1
 DA:35,1
-LF:35
+LF:32
 LH:7
 BRF:0
 BRH:0
-FNF:9
+FNF:8
 FNH:1
 end_of_record
-SF:/Users/stringhamdb/Documents/GitHub/cs4790-spr2020/BlabberApp/BlabberApp.Domain/Entities/User.cs
+SF:/Users/alexbrown/Desktop/BlabberApp/BlabberApp/BlabberApp.Domain/Entities/User.cs
 FN:7,System.Guid BlabberApp.Domain.Entities.User::get_Id()
 FNDA:0,System.Guid BlabberApp.Domain.Entities.User::get_Id()
 DA:8,0
@@ -780,26 +820,6 @@ BRDA:26,7,0,3
 BRDA:26,7,1,0
 BRDA:26,24,0,0
 BRDA:26,24,1,3
-FN:38,System.Boolean BlabberApp.Domain.Entities.User::IsValid()
-FNDA:0,System.Boolean BlabberApp.Domain.Entities.User::IsValid()
-DA:39,0
-DA:40,0
-DA:41,0
-DA:42,0
-DA:43,0
-DA:44,0
-DA:45,0
-DA:46,0
-BRDA:40,11,0,0
-BRDA:40,11,1,0
-BRDA:41,30,0,0
-BRDA:41,30,1,0
-BRDA:42,61,0,0
-BRDA:42,61,1,0
-BRDA:43,79,0,0
-BRDA:43,79,1,0
-BRDA:44,99,0,0
-BRDA:44,99,1,0
 FN:12,System.Void BlabberApp.Domain.Entities.User::.ctor()
 FNDA:0,System.Void BlabberApp.Domain.Entities.User::.ctor()
 DA:13,0
@@ -813,10 +833,10 @@ DA:19,3
 DA:20,3
 DA:21,3
 DA:22,3
-LF:32
+LF:24
 LH:13
-BRF:14
+BRF:4
 BRH:2
-FNF:8
+FNF:7
 FNH:3
 end_of_record

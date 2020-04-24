@@ -62,5 +62,13 @@ namespace BlabberApp.DataStore.Plugins
         {
             this.buffer.Clear();
         }
+         public void UpdateBlabById(Guid Id, String Message)
+        {
+            //TODO
+        }
+        public void UpdateEmailById(Guid Id, String Email)
+        {
+            //TODO
+        }
     }
 }

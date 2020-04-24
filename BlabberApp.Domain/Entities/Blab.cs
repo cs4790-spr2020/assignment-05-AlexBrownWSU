@@ -37,10 +37,10 @@ namespace BlabberApp.Domain.Entities
         public DateTime DTTM { get; set; }
         public string Message { get; set; }
         public User User { get; set; }
-        public bool IsValid()
+        /*public bool IsValid()
         {
             // Add code to validate class data.
             return true;
-        }
+        }*/
     }
 }

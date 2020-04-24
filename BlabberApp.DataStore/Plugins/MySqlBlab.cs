@@ -13,7 +13,7 @@ namespace BlabberApp.DataStore.Plugins
         MySqlConnection dcBlab;
         public MySqlBlab()
         {
-            this.dcBlab = new MySqlConnection("server=142.93.114.73;database=donbstringham;user=donbstringham;password=letmein");
+            this.dcBlab = new MySqlConnection("server=142.93.114.73;database=AlexBrownWSU;user=AlexBrownWSU;password=letmein");
             try
             {
                 this.dcBlab.Open();
@@ -152,6 +152,20 @@ namespace BlabberApp.DataStore.Plugins
             blab.DTTM = (DateTime)row["dttm_created"];
 
             return blab;
+        }
+         public void UpdateBlabById(Guid Id, String Message)
+        {
+            try
+            {
+                string sql = "UPDATE blabs SET message = '" + Message + "' WHERE sys_id='" + Id.ToString() + "'";
+                MySqlCommand cmd = new MySqlCommand(sql, this.dcBlab);
+                cmd.ExecuteNonQuery();
+            }
+            
+            catch(Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
         }
     }
 }

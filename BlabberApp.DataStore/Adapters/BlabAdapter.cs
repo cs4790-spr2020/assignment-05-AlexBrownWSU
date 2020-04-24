@@ -46,5 +46,13 @@ namespace BlabberApp.DataStore.Adapters
        {
            return this.plugin.ReadByUserId(Id);
        }
+       public Blab GetByBlabId(Guid Id)
+       {
+           return (Blab)this.plugin.ReadById(Id);
+       }
+       public void UpdateBlabById(Guid Id, String Message)
+       {
+           this.plugin.UpdateBlabById(Id, Message);
+       }
     }
 }
